@@ -12,13 +12,20 @@
     <link rel="stylesheet" href="/assets/css/ace.min.css" class="ace-main-stylesheet" id="main-ace-style"/>
     <!-- inline scripts related to this page -->
     <script src="/assets/js/jquery-2.1.4.min.js"></script>
-
+    <style>
+        .login-div {
+            display: flex !important;
+            min-height: 100vh;
+            align-items: center !important;
+            justify-content: center !important;
+        }
+    </style>
 </head>
-<body class="login-layout">
+<body class="login-layout" style="background: url('/images/back.jpg')">
 <div class="main-container">
     <div class="main-content">
-        <div class="row">
-            <div class="col-sm-10 col-sm-offset-1">
+        <div class="row login-div">
+            <div class="">
                 <div class="login-container">
                     <div class="center ">
                         <h1>

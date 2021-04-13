@@ -43,6 +43,7 @@
                                 <th>用户名</th>
                                 <th>真实姓名</th>
                                 <th class="col-xs-2">权限</th>
+                                <th>所属店铺</th>
                                 <th>状态</th>
                                 <th>创建时间</th>
                                 <th>修改时间</th>
@@ -57,6 +58,7 @@
                                     <td>{{$info->name}}</td>
                                     <td>{{$info->realname}}</td>
                                     <td>{{$info->groups}}</td>
+                                    <td>{{$info->belong_to}}</td>
                                     <td>{{\App\Models\AdminUser::$statusArr[$info->status]}}</td>
                                     <td>{{$info->created_at}}</td>
                                     <td>{{$info->updated_at}}</td>

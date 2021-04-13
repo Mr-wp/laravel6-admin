@@ -15,6 +15,8 @@ class ComposerStaticInit14bb15ea10e9efbc174c79ea6319959d
         'f598d06aa772fa33d905e87be6398fb1' => __DIR__ . '/..' . '/symfony/polyfill-intl-idn/bootstrap.php',
         '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
         '0d59ee240a4cd96ddbb4ff164fccea4d' => __DIR__ . '/..' . '/symfony/polyfill-php73/bootstrap.php',
+        '8825ede83f2f289127722d4e842cf7e8' => __DIR__ . '/..' . '/symfony/polyfill-intl-grapheme/bootstrap.php',
+        'b6b991a57620e2fb6b2f66f03fe9ddc2' => __DIR__ . '/..' . '/symfony/string/Resources/functions.php',
         '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
         '801c31d8ed748cfa537fa45402288c95' => __DIR__ . '/..' . '/psy/psysh/src/functions.php',
         'def43f6c87e4f8dfd0c9e1b1bab14fe8' => __DIR__ . '/..' . '/symfony/polyfill-iconv/bootstrap.php',
@@ -28,13 +30,11 @@ class ComposerStaticInit14bb15ea10e9efbc174c79ea6319959d
         'e39a8b23c42d4e1452234d762b03835a' => __DIR__ . '/..' . '/ramsey/uuid/src/functions.php',
         'f0906e6318348a765ffb6eb24e0d0938' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
         '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
-        '9cdd7b9056abc3081735233ba9dd9c7f' => __DIR__ . '/..' . '/facade/flare-client-php/src/helpers.php',
         'b6ec61354e97f32c0ae683041c78392a' => __DIR__ . '/..' . '/scrivo/highlight.php/HighlightUtilities/functions.php',
-        '8825ede83f2f289127722d4e842cf7e8' => __DIR__ . '/..' . '/symfony/polyfill-intl-grapheme/bootstrap.php',
+        '9cdd7b9056abc3081735233ba9dd9c7f' => __DIR__ . '/..' . '/facade/flare-client-php/src/helpers.php',
         'ed962a97bd972bc82007176b647d4e36' => __DIR__ . '/..' . '/facade/ignition/src/helpers.php',
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         '841780ea2e1d6545ea3a253239d59c05' => __DIR__ . '/..' . '/qiniu/php-sdk/src/Qiniu/functions.php',
-        'b6b991a57620e2fb6b2f66f03fe9ddc2' => __DIR__ . '/..' . '/symfony/string/Resources/functions.php',
         '4a1f389d6ce373bda9e57857d3b61c84' => __DIR__ . '/..' . '/barryvdh/laravel-debugbar/src/helpers.php',
         'c80bdee4dc5dfb79b19a40a8a311ccb0' => __DIR__ . '/../..' . '/app/Library/functions.php',
     );
@@ -51,6 +51,10 @@ class ComposerStaticInit14bb15ea10e9efbc174c79ea6319959d
         'p' => 
         array (
             'phpDocumentor\\Reflection\\' => 25,
+        ),
+        'k' => 
+        array (
+            'kartik\\plugins\\fileinput\\' => 25,
         ),
         'X' => 
         array (
@@ -199,6 +203,10 @@ class ComposerStaticInit14bb15ea10e9efbc174c79ea6319959d
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
             1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
             2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
+        ),
+        'kartik\\plugins\\fileinput\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/bootstrap-fileinput',
         ),
         'XdgBaseDir\\' => 
         array (
@@ -531,6 +539,7 @@ class ComposerStaticInit14bb15ea10e9efbc174c79ea6319959d
         'App\\Http\\Controllers\\Admin\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/Controller.php',
         'App\\Http\\Controllers\\Admin\\CrontabController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/CrontabController.php',
         'App\\Http\\Controllers\\Admin\\IndexController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/IndexController.php',
+        'App\\Http\\Controllers\\Admin\\ShopsController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/ShopsController.php',
         'App\\Http\\Controllers\\Admin\\SiteController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/SiteController.php',
         'App\\Http\\Controllers\\Admin\\TablesController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/TablesController.php',
         'App\\Http\\Controllers\\Admin\\TestController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/TestController.php',
@@ -559,6 +568,7 @@ class ComposerStaticInit14bb15ea10e9efbc174c79ea6319959d
         'App\\Models\\AdminMenu' => __DIR__ . '/../..' . '/app/Models/AdminMenu.php',
         'App\\Models\\AdminUser' => __DIR__ . '/../..' . '/app/Models/AdminUser.php',
         'App\\Models\\Crontab' => __DIR__ . '/../..' . '/app/Models/Crontab.php',
+        'App\\Models\\Shops' => __DIR__ . '/../..' . '/app/Models/Shops.php',
         'App\\Models\\Site' => __DIR__ . '/../..' . '/app/Models/Site.php',
         'App\\Models\\Tables' => __DIR__ . '/../..' . '/app/Models/Tables.php',
         'App\\Models\\WorkInfo' => __DIR__ . '/../..' . '/app/Models/WorkInfo.php',
@@ -575,6 +585,7 @@ class ComposerStaticInit14bb15ea10e9efbc174c79ea6319959d
         'App\\Services\\MailService' => __DIR__ . '/../..' . '/app/Services/MailService.php',
         'App\\Services\\NoticeService' => __DIR__ . '/../..' . '/app/Services/NoticeService.php',
         'App\\Services\\Service' => __DIR__ . '/../..' . '/app/Services/Service.php',
+        'App\\Services\\ShopsServices' => __DIR__ . '/../..' . '/app/Services/ShopsServices.php',
         'App\\Services\\SiteService' => __DIR__ . '/../..' . '/app/Services/SiteService.php',
         'App\\Services\\TablesServices' => __DIR__ . '/../..' . '/app/Services/TablesServices.php',
         'App\\Services\\WorkInfoService' => __DIR__ . '/../..' . '/app/Services/WorkInfoService.php',
@@ -963,6 +974,7 @@ class ComposerStaticInit14bb15ea10e9efbc174c79ea6319959d
         'Facade\\FlareClient\\Http\\Response' => __DIR__ . '/..' . '/facade/flare-client-php/src/Http/Response.php',
         'Facade\\FlareClient\\Middleware\\AddGlows' => __DIR__ . '/..' . '/facade/flare-client-php/src/Middleware/AddGlows.php',
         'Facade\\FlareClient\\Middleware\\AnonymizeIp' => __DIR__ . '/..' . '/facade/flare-client-php/src/Middleware/AnonymizeIp.php',
+        'Facade\\FlareClient\\Middleware\\CensorRequestBodyFields' => __DIR__ . '/..' . '/facade/flare-client-php/src/Middleware/CensorRequestBodyFields.php',
         'Facade\\FlareClient\\Report' => __DIR__ . '/..' . '/facade/flare-client-php/src/Report.php',
         'Facade\\FlareClient\\Solutions\\ReportSolution' => __DIR__ . '/..' . '/facade/flare-client-php/src/Solutions/ReportSolution.php',
         'Facade\\FlareClient\\Stacktrace\\Codesnippet' => __DIR__ . '/..' . '/facade/flare-client-php/src/Stacktrace/Codesnippet.php',
