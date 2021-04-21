@@ -16,8 +16,8 @@ class CommonController extends Controller
      */
     public function uploadFiles(){
         $imgs = '';
-        if(!empty(request()->file('auth_imgs_file'))){
-            $path = request()->file('auth_imgs_file')->store('avatars','qiniu');
+        if(!empty(request()->file('upload_img'))){
+            $path = request()->file('upload_img')->store('avatars','qiniu');
             $imgs = "http://cdn.findwp.cn/".$path;
         }
         return response()->json($imgs);

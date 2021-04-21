@@ -11,7 +11,6 @@
 */
 
 use Illuminate\Support\Facades\Route;
-
 //路由访问时自动生成
 if (php_sapi_name() != 'cli') {
     $method = strtolower($_SERVER['REQUEST_METHOD']); //方法
@@ -28,6 +27,9 @@ if (php_sapi_name() != 'cli') {
         $middleware = [];
         if ($path[0] == 'Admin') {
             // $middleware[] = '\App\Http\Middleware\AdminMiddleware';
+        }
+        if ($path[0] == 'Api') {
+            $act = str_replace('api/','',$act);
         }
         //登入后台的所有操作在这里自动生成
         Route::group(['middleware' => $middleware], function () use ($method, $act, $path) {

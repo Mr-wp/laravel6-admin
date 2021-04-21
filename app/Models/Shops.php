@@ -29,15 +29,14 @@ class Shops extends Model
         'owner_name.required' => '持有人不能为空',
         'owner_phone.required' => '持有人电话不能为空',
         'address.required' => '地区不能为空',
+        'address_detail.required' => '详细地址不能为空',
+        'type.required' => '店铺类型不能为空',
     ];
     public  $rules = [
         'name' => 'required|string|max:50|min:2',
         'owner_name' => 'required',
         'owner_phone' => 'required',
         'address' => 'required',
+        'type' => 'required',
     ];
-    public function btAdminUser()
-    {
-        return $this->belongsTo('App\Models\AdminUser', 'admin_id', 'id');
-    }
 }

@@ -153,3 +153,16 @@ function form_radio($array = array(), $id = 0, $str = '', $width = 1, $field = '
     }
     return $string;
 }
+
+function requestPythonPost($url, $param)
+{
+    $cjconn = curl_init($url);
+    curl_setopt($cjconn, CURLOPT_POST, TRUE);
+    curl_setopt($cjconn, CURLOPT_SSL_VERIFYPEER, FALSE);
+    curl_setopt($cjconn, CURLOPT_RETURNTRANSFER, TRUE);
+    curl_setopt($cjconn, CURLOPT_POSTFIELDS,http_build_query($param));
+    $result = curl_exec($cjconn);
+    curl_close($cjconn);
+    $data = json_decode($result,true);
+    return $data;
+}

@@ -108,7 +108,7 @@
                     <div class="form-group {{ $errors->has('auth_imgs') ? ' has-error' : '' }}">
                         <label class="col-sm-3 control-label no-padding-right"> <span style="color: red;">*</span>店铺资质 </label>
                         <div class="col-sm-6">
-                            <input id="auth_imgs_file" name="auth_imgs_file" multiple data-overwrite-initial="false"  type="file" value="">
+                            <input id="upload_img" name="upload_img" multiple data-overwrite-initial="false"  type="file" value="">
                             <input id="auth_imgs" name="auth_imgs" type="hidden" value="{{$info->auth_imgs??''}}">
                             <input id="auth_imgs_del" name="auth_imgs_del" type="hidden" value="">
                         </div>
@@ -263,16 +263,13 @@
                         extra: {id: "{{ isset($info->id)?$info->id:'' }}"}
                     })
                 }
-                $('#fang_province').val(area_arr[0]);
-                $('#fang_city').val(area_arr[1]);
-                $('#fang_region').val(area_arr[2]);
             }
             $.ajaxSetup({
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 }
             });
-            $("#auth_imgs_file").fileinput({
+            $("#upload_img").fileinput({
                 language: 'zh', //设置语言
                 uploadUrl: "/admin/common/uploadFiles", //上传的地址
                 deleteUrl: "/admin/common/deleteFiles",

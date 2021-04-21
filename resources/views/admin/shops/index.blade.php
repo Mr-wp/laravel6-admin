@@ -49,8 +49,8 @@
                             <tr>
                                 <th>序号</th>
                                 <th>店铺名称</th>
-                                <th>持有人</th>
-                                <th>持有人电话</th>
+                                <th>法人</th>
+                                <th>法人电话</th>
                                 <th>地区</th>
                                 <th>详细地址</th>
                                 <th>审核状态</th>
@@ -113,7 +113,21 @@
                 var per_page = $(this).val();
                 $('#myform').append("<input type='hidden' name='pageSize' value='"+per_page+"'/>");
                 $('#myform').submit();
-            })
+            });
+            $.getJSON('json/word.json', function(word) {
+                console.log(word);
+                // var word = JSON.parse(JSON.stringify(word));
+                // var x = word.word
+
+                // for (var i = 0 ;i<x.length;i++){
+                //     var zf = word.word[i]
+                //     var t = st.indexOf(zf);
+                //     if (t != -1){
+                //         s = s + " " + zf
+                //     }
+                // }
+                // console.log(word);
+            });
         });
     </script>
 

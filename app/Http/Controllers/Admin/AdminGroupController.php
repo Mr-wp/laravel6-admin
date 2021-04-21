@@ -19,6 +19,9 @@ class AdminGroupController extends Controller
     public function index()
     {
         $where = [];
+        if($this->loginUser['shop_id']!=1){
+            $where[] = ['shop_id',$this->loginUser['shop_id']];
+        }
         $lists = AdminGroup::query()->where($where)->orderBy('id', 'desc')->paginate(20);
         return $this->view(compact('lists'));
     }

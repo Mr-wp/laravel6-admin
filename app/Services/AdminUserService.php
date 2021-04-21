@@ -34,7 +34,10 @@ class AdminUserService extends Service
         if (!empty($params['type'])) {
             $where[] = ['type', $params['type']];
         }
-
+        $loginUser = json_decode(request()->session()->get('login_user'), true);
+        if($loginUser['shop_id']!=1){
+            $where[] = ['shop_id',$loginUser['shop_id']];
+        }
         $limit = $params['limit'] ?? 10;
         $res = AdminUser::query()->where($where)->orderBy('id', 'desc')->paginate($limit);
 

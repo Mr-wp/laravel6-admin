@@ -90,12 +90,8 @@ class AdminUserController extends Controller
     {
         //TODO 处理自己的字段校验格式
 
-        $params = request(['name', 'mobile', 'password', 'realname', 'status', 'email']);
+        $params = request(['name', 'mobile', 'password', 'realname', 'status', 'email', 'head_img']);
         $query = AdminUser::query();
-        if(!empty(request()->file('head_img'))){
-            $path = request()->file('head_img')->store('avatars','qiniu');
-            $params['head_img'] = "http://cdn.findwp.cn/".$path;
-        }
         if (request('id')) {
             //修改
             $adminId = request('id');
@@ -103,6 +99,9 @@ class AdminUserController extends Controller
         } else {
             //添加
             $params['password'] = bcrypt($params['password']);
+            //当前登录用户所属店铺
+            $loginUser = json_decode(request()->session()->get('login_user'), true);
+            $params['shop_id'] = $loginUser['shop_id'];
             $rs = AdminUser::query()->create($params);
             $adminId = $rs['id'];
         }
@@ -156,5 +155,24 @@ class AdminUserController extends Controller
             AdminUser::query()->where('id', $id)->delete();
         }
         return $this->success('操作成功');
+    }
+
+    /**
+     * 启用|禁用
+     * @return \App\Library\type
+     */
+    public function changeStatus()
+    {
+        $id = request('id');
+        if (!empty($id)) {
+            $info = AdminUser::query()->find($id);
+            if (!$info) {
+                return $this->error('非法请求');
+            }
+            $status = ($info['status']==1)?2:1;
+            AdminUser::query()->where('id', $id)->update(['status' => $status]);
+            return $this->success('操作成功');
+        }
+        return $this->error('非法请求');
     }
 }

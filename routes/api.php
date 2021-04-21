@@ -12,7 +12,6 @@ use Illuminate\Http\Request;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::middleware('api', 'throttle:60,1')->group(function () {
+    Route::get('/getSplitWordList', "Api\\ApiController@getSplitWordList");
 });

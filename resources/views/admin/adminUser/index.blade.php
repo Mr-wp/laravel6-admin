@@ -43,7 +43,9 @@
                                 <th>用户名</th>
                                 <th>真实姓名</th>
                                 <th class="col-xs-2">权限</th>
-                                <th>所属店铺</th>
+                                @if($login_user['shop_id']==1)
+                                    <th>所属店铺</th>
+                                @endif
                                 <th>状态</th>
                                 <th>创建时间</th>
                                 <th>修改时间</th>
@@ -58,14 +60,23 @@
                                     <td>{{$info->name}}</td>
                                     <td>{{$info->realname}}</td>
                                     <td>{{$info->groups}}</td>
-                                    <td>{{$info->belong_to}}</td>
+                                    @if($login_user['shop_id']==1)
+                                    <td>{{$info->btShop->name}}</td>
+                                    @endif
                                     <td>{{\App\Models\AdminUser::$statusArr[$info->status]}}</td>
                                     <td>{{$info->created_at}}</td>
                                     <td>{{$info->updated_at}}</td>
                                     <td>
                                         <div class="btn-group">
                                             <a href="info?id={{$info->id}}">编辑</a>
-                                            <a href="changePwd?id={{$info->id}}">修改密码</a>
+                                            @if($login_user['is_super'])
+                                                <a href="changePwd?id={{$info->id}}">修改密码</a>
+                                                @if($info->status==1)
+                                                    <a href="changeStatus?id={{$info->id}}">禁用</a>
+                                                @else
+                                                    <a href="changeStatus?id={{$info->id}}">启用</a>
+                                                @endif
+                                            @endif
                                             @if($info->is_super==0)<a href="del?id={{$info->id}}">删除</a>@endif
                                         </div>
                                     </td>
