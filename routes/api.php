@@ -13,5 +13,5 @@ use Illuminate\Http\Request;
 |
 */
 Route::middleware('api', 'throttle:60,1')->group(function () {
-    Route::get('/getSplitWordList', "Api\\ApiController@getSplitWordList");
+    Route::post('/getSplitWordList', "Api\\ApiController@getSplitWordList");
 });
